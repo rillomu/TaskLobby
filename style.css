@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Cores de fundo */
+    --bg-main: #0d0d0d;
+    --bg-sidebar: #141414;
+    --bg-card: #1a1a1a;
+    --bg-input: #1f1f1f;
+
+    /* Bordas */
+    --border-color: #2a2a2a;
+
+    /* Textos */
+    --text-primary: #f5f5f5;
+    --text-secondary: #8a8a8a;
+    --text-muted: #5a5a5a;
+
+    /* Destaque */
+    --accent: #f5a623;
+    --accent-hover: #e0951a;
+
+    /* Status das tarefas */
+    --status-late: #e05252;
+    --status-pending: #f5a623;
+    --status-upcoming: #4a9eff;
+    --status-done: #4a9eff;
+
+    /* Espaçamentos (opcional, mas ajuda a manter consistência) */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+
+    /* Larguras fixas do layout */
+    --sidebar-width: 240px;
+    --header-height: 70px;
+}
+
+/* ============================================ BASE ============================================ */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ============================================ HEADER ============================================ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    height: var(--header-height);
+    background-color: var(--bg-main);
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0; /* impede o header de "encolher" no flex */
+}
+
+.header__logo {
+    width: 120px; /* reserva o espaço, ajuste quando colocar a logo de verdade */
+    flex-shrink: 0;
+}
+
+.header__title {
+    text-align: center;
+    flex: 1; /* ocupa o espaço do meio e centraliza o texto dentro dele */
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.header__actions input {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    color: var(--text-primary);
+    font-size: 14px;
+    width: 220px;
+}
+
+.header__actions input::placeholder {
+    color: var(--text-muted);
+}
+
+.header__actions input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.header__actions button {
+    background-color: var(--accent);
+    color: #1a1a1a;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.header__actions button:hover {
+    background-color: var(--accent-hover);
+}
+
+/* ============================================ LAYOUT PRINCIPAL (main = sidebar + conteúdo) ============================================ */
+main {
+    display: flex;
+    flex: 1; /* ocupa o espaço restante da tela, abaixo do header */
+    min-height: 0; /* corrige bug comum de overflow em flex containers */
+}
+
+/* ============================================ SIDEBAR ============================================ */
+.sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0; /* impede a sidebar de encolher quando a tela for menor */
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    padding: 24px 16px;
+    overflow-y: auto; /* caso a lista de projetos cresça muito */
+}
+
+.sidebar h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.sidebar__navigation {
+    margin-bottom: 28px;
+}
+
+.sidebar li {
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar li:hover {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+}
+
+/* ============================================ ÁREA DE TAREFAS ============================================ */
+.tasks {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto; /* permite rolar só essa área se a lista for grande */
+}
+
+.tasks__pendentes,
+.tasks__concluidos {
+    margin-bottom: 24px;
+}
+
+.tasks__concluidos h2 {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.tasks li {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+}
+
+/* Tarefas concluídas ficam com texto riscado e opacas */
+.tasks__concluidos li {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    opacity: 0.6;
+}
