@@ -4,7 +4,7 @@
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="stylesheet" href="style.css"> 
-        <title>TaskManagerV1</title> 
+        <title>TaskLobbyV1</title> 
     </head>
     <body> 
         <header class="header">
@@ -12,13 +12,22 @@
             </div>
             <div class="header__title">
                 <h1>Todas As Tarefas</h1> 
-                <p>Pendentes: 3 · Concluídos: 1</p> 
+                <p id="header__title__contador">Pendentes: 0 · Concluídos: 0</p> 
             </div>
             <div class="header__actions">
-                <input id = "Add-Task" >
-                <button>+ Add Task</button>
+                <input id="search-task" type="text" placeholder="Pesquisar Tarefas..." >
+                <button id="add-task">+ Add Tarefa</button>
             </div>
         </header> 
+        <div class="modal__add-task"> 
+            <div class="modal__add-task__conteudo">
+            <input id="modal__add-task__nova" type="text" placeholder="Qual a nova tarefa?">
+                <div class="botoes">
+                    <button class="botao-cancelar">Cancelar</button>
+                    <button class="botao-confirmar">Confirmar</button>
+                </div>
+            </div>
+        </div>
         <main> 
             <aside class="sidebar">
                 <section class="sidebar__navigation"> 
@@ -34,29 +43,22 @@
                 <section class="sidebar__projects"> 
                     <h2>Projetos</h2>
                         <ul>
-                            <li>Backend</li>
-                            <li>Frontend</li>
-                            <li>Idiomas</li>
-                            <li>Extras</li>
                         </ul>
                 </section>
             </aside>
             <section class="tasks"> 
                 <section class="tasks__pendentes">
-                    <ul>
-                        <li>Curso de html e CSS</li>
-                        <li>Curso de JavaScript </li>
-                        <li>Curso de Excel</li>
+                    <ul id="tasks__pendentes__lista">
                     </ul>
                 </section>
                 <section class="tasks__concluidos">
                     <h2>Concluídos (1)</h2>
-                    <ul> 
-                        <li>Introdução de Desenvolvimento de Software</li>
+                    <ul id="tasks__concluidos__lista"> 
                     </ul>
                 </section> 
             </section>
         </main>
+        <script src="script.js"></script>
     </body>
 </html> 
 
