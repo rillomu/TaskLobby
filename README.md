@@ -100,7 +100,7 @@
 - Layout dark mode fiel ao Figma
 - Modal com overlay e blur
 
-**O que você aprendeu:**
+**O que foi usado:**
 - HTML semântico e BEM
 - CSS Flexbox e variáveis
 - DOM, Eventos, Funções
@@ -132,7 +132,7 @@
 - [ ] Arrastar para reorganizar a ordem das tarefas (drag and drop)
 - [ ] Lixeira com recuperação de itens apagados
 
-**O que você vai aprender:**
+**O que sera utilizado:**
 - Arrays e objetos
 - Estruturas de dados
 - Drag and Drop API
@@ -147,7 +147,7 @@
 - [ ] Salvar ordem das tarefas
 - [ ] Salvar estado da lixeira
 
-**O que você vai aprender:**
+**O que sera utilizado:**
 - JSON avançado
 - Estruturas de dados aninhadas
 
@@ -166,7 +166,7 @@
 - [ ] Pesquisa funcional
 - [ ] Tema claro / escuro
 
-**O que você vai aprender:**
+**O que sera utilizado:**
 - Métodos de arrays (filter, sort, map)
 - Manipulação de datas
 - Filtros e ordenação
@@ -188,7 +188,7 @@
 - [ ] Dashboard com estatísticas
 - [ ] Inbox (central de notificações internas)
 
-**O que você vai aprender:**
+**O que sera utilizado:**
 - Estatísticas e cálculos
 - Organização de dados
 
@@ -204,7 +204,7 @@
 - Task
 - Modal
 
-**O que você vai aprender:**
+**O que sera utilizado:**
 - Componentização
 - State e Props
 - Hooks (useState, useEffect)
@@ -232,7 +232,7 @@ PUT    /tasks/:id
 DELETE /tasks/:id
 ```
 
-**O que você vai aprender:**
+**O que sera utilizado:**
 - Express
 - REST
 - Controllers e Services
@@ -247,7 +247,7 @@ DELETE /tasks/:id
 Usuário → Projeto → Pastas → Tarefas → Subtarefas
 ```
 
-**O que você vai aprender:**
+**O que sera utilizado:**
 - SQL
 - Relacionamentos
 - CRUD real
@@ -262,7 +262,7 @@ Usuário → Projeto → Pastas → Tarefas → Subtarefas
 Cadastro → Login → JWT → Área Logada
 ```
 
-**O que você vai aprender:**
+**O que sera utilizado:**
 - Autenticação
 - Hash de senha
 - Middleware
